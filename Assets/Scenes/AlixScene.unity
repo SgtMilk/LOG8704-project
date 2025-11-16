@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
   m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: 0.41960785, g: 0.47843137, b: 0.627451, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.0045
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 59573b088aaea0442bf29e0a0e9d1339, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -237,6 +237,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1767192439, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_RenderingPath
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig)
@@ -426,6 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishingRodThrow
   m_throwAction: {fileID: 8759445120557700588, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_bait: {fileID: 0}
 --- !u!1001 &496301048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -493,6 +498,10 @@ PrefabInstance:
     - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489712, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
+      propertyPath: m_ClipPlaneOffset
+      value: 0.07
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -568,6 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   m_throwAction: {fileID: 0}
+  m_bait: {fileID: 0}
 --- !u!1 &1314713433
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,7 +795,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f0d9f02c1294039a24b016d01faf91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  m_FishingRod: {fileID: 486980078}
+  m_rod: {fileID: 0}
+  followingRodToggle: 0
+  m_followingRod: 1
 --- !u!1 &2092139007
 GameObject:
   m_ObjectHideFlags: 0
