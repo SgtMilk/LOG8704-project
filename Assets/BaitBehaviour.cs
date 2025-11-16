@@ -1,28 +1,35 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class BaitBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    private Transform m_FishingRod;
+    [SerializeField] private GameObject m_rod;
     
-    private bool followingRod = true;
+    public bool followingRodToggle = false;
+    public bool m_followingRod = true;
     private Vector3 targetOffset;
-    private Quaternion rotationOffset;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        targetOffset = transform.position - m_FishingRod.transform.position;
-        rotationOffset = m_FishingRod.transform.rotation * Quaternion.Inverse(transform.rotation);
+        targetOffset = transform.position - m_rod.transform.position;
+        GetComponent<Collider>().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (followingRod)
+        if (followingRodToggle)
         {
-            // transform.position = m_FishingRod.transform.position + targetOffset;
-            // transform.rotation = rotationOffset * m_FishingRod.transform.rotation;
+            if (transform.position.y < 0)
+            {
+                transform.position -= new Vector3(0, transform.position.y, 0);
+            }
+        }
+
+        if (m_followingRod)
+        {
+            transform.position = (m_rod.transform.position) + targetOffset.magnitude * m_rod.transform.up;
         }
     }
 }

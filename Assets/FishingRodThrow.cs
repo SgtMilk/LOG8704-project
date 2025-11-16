@@ -10,6 +10,8 @@ public class FishingRodThrow : MonoBehaviour
     [SerializeField]
     InputActionReference m_throwAction;
 
+    [SerializeField] private GameObject m_bait;
+
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -48,6 +50,20 @@ public class FishingRodThrow : MonoBehaviour
 
     private void OnThrowDemanded(InputAction.CallbackContext ctx)
     {
-        Debug.Log(previousPosition-transform.position);
+        // Debug.Log(previousPosition-transform.position);
+        m_bait.GetComponent<Rigidbody>().AddForce((previousPosition-transform.position).normalized, ForceMode.Impulse);
+        m_bait.GetComponent<Rigidbody>().useGravity = true;
+        m_bait.GetComponent<BaitBehaviour>().m_followingRod = false;
+        
     }
+    
+    private void OnReelDemanded(InputAction.CallbackContext ctx)
+    {
+        // Debug.Log(previousPosition-transform.position);
+        m_bait.GetComponent<Rigidbody>().useGravity = false;
+        m_bait.GetComponent<BaitBehaviour>().followingRodToggle = true;
+        m_bait.GetComponent<BaitBehaviour>().m_followingRod = false;
+    }
+    
+    
 }
