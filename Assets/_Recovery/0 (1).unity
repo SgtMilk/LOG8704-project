@@ -439,6 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb4a49a0db8f8403896c0e16cc5eeaa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishingRodThrow
+  m_throwAction: {fileID: 0}
 --- !u!1 &756192406
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb4a49a0db8f8403896c0e16cc5eeaa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  m_throwAction: {fileID: 0}
 --- !u!1 &1249617917
 GameObject:
   m_ObjectHideFlags: 0
