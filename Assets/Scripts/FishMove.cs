@@ -63,7 +63,10 @@ public class FishMove : MonoBehaviour
         {
             m_lastwaypoint = m_waypoint;
             m_speed = Random.Range(0.5f, 2f);
-            m_animator.speed = m_speed;
+            if (m_animator != null)
+            {
+                m_animator.speed = m_speed;
+            }
             return true;
         }
     }

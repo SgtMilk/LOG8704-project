@@ -49,6 +49,7 @@ public class FishSpawner : MonoBehaviour
     [Header("Global settings")]
     [SerializeField][Range(0f, 600f)] private float m_SpawnTimer;
     [SerializeField] private Vector3 m_SpawnArea = new Vector3(10f, 5f, 10f);
+    private Transform lureTarget;
 
     [Header("Fish Objects settings")]
     public FishObject[] FishObjects = new FishObject[5];
@@ -128,5 +129,11 @@ public class FishSpawner : MonoBehaviour
                 Waypoints.Add(waypoint);
             }
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireCube(transform.position, m_SpawnArea);
     }
 }
