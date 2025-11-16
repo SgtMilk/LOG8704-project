@@ -8,6 +8,9 @@ public class FishingRodThrow : MonoBehaviour
     
     [SerializeField]
     InputActionReference m_throwAction;
+    
+    [SerializeField]
+    InputActionReference m_reelAction;
 
     [SerializeField] private GameObject m_bait;
 
@@ -24,6 +27,12 @@ public class FishingRodThrow : MonoBehaviour
         if (throwBait != null)
         {
             throwBait.performed += OnThrowDemanded;
+        }
+        
+        var reelBait = GetInputAction(m_reelAction);
+        if (reelBait != null)
+        {
+            reelBait.performed += OnReelDemanded;
         }
     }
 
@@ -57,10 +66,11 @@ public class FishingRodThrow : MonoBehaviour
     
     private void OnReelDemanded(InputAction.CallbackContext ctx)
     {
+        Debug.Log("Reel demanded");
         // Debug.Log(previousPosition-transform.position);
         m_bait.GetComponent<Rigidbody>().useGravity = false;
         m_bait.GetComponent<BaitBehaviour>().followingRodToggle = true;
-        m_bait.GetComponent<BaitBehaviour>().m_followingRod = false;
+        m_bait.GetComponent<BaitBehaviour>().m_followingRod = true;
     }
     
     

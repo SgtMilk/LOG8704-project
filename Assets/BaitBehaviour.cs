@@ -21,27 +21,35 @@ public class BaitBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+            
+        if (transform.position.y < 0)
+        {
+            transform.position -= new Vector3(0, transform.position.y, 0);
+        }
+        
         if (m_followingRod)
         {
+            GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
             transform.position = (m_rod.transform.position) + targetOffset.magnitude * m_rod.transform.up;
-        }
-        else
-        {
-            
-            if (transform.position.y < 0)
-            {
-                transform.position -= new Vector3(0, transform.position.y - (float) 0.1, 0);
-            }
         }
     }
 
     private void FixedUpdate()
     {
         previousPosition = transform.position;
+        GetComponent<Rigidbody>().linearVelocity = GetComponent<Rigidbody>().linearVelocity * (float) 0.99;
     }
 
     public void ExecuteThrow()
     {
-        GetComponent<Rigidbody>().AddForce((previousPosition-transform.position).normalized * 5, ForceMode.Impulse);
+        GetComponent<Rigidbody>().AddForce((previousPosition-transform.position).normalized * (float) 1.5, ForceMode.Impulse);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Water"))
+        {
+            GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+        }
     }
 }
