@@ -4,11 +4,13 @@ using UnityEngine.InputSystem;
 
 public class FishingRodThrow : MonoBehaviour
 {
-    private Vector3 previousPosition = Vector3.zero;
     
     
     [SerializeField]
     InputActionReference m_throwAction;
+    
+    [SerializeField]
+    InputActionReference m_reelAction;
 
     [SerializeField] private GameObject m_bait;
 
@@ -26,6 +28,12 @@ public class FishingRodThrow : MonoBehaviour
         {
             throwBait.performed += OnThrowDemanded;
         }
+        
+        var reelBait = GetInputAction(m_reelAction);
+        if (reelBait != null)
+        {
+            reelBait.performed += OnReelDemanded;
+        }
     }
 
     // Update is called once per frame
@@ -37,7 +45,6 @@ public class FishingRodThrow : MonoBehaviour
     private void FixedUpdate()
     {
         
-        previousPosition = transform.position;
 
     }
     
@@ -51,7 +58,7 @@ public class FishingRodThrow : MonoBehaviour
     private void OnThrowDemanded(InputAction.CallbackContext ctx)
     {
         // Debug.Log(previousPosition-transform.position);
-        m_bait.GetComponent<Rigidbody>().AddForce((previousPosition-transform.position).normalized, ForceMode.Impulse);
+        m_bait.GetComponent<BaitBehaviour>().ExecuteThrow();
         m_bait.GetComponent<Rigidbody>().useGravity = true;
         m_bait.GetComponent<BaitBehaviour>().m_followingRod = false;
         
@@ -59,10 +66,11 @@ public class FishingRodThrow : MonoBehaviour
     
     private void OnReelDemanded(InputAction.CallbackContext ctx)
     {
+        Debug.Log("Reel demanded");
         // Debug.Log(previousPosition-transform.position);
         m_bait.GetComponent<Rigidbody>().useGravity = false;
         m_bait.GetComponent<BaitBehaviour>().followingRodToggle = true;
-        m_bait.GetComponent<BaitBehaviour>().m_followingRod = false;
+        m_bait.GetComponent<BaitBehaviour>().m_followingRod = true;
     }
     
     
