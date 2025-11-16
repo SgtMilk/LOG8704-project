@@ -50,6 +50,7 @@ public class FishSpawner : MonoBehaviour
     [SerializeField][Range(0f, 600f)] private float m_SpawnTimer;
     [SerializeField] private Vector3 m_SpawnArea = new Vector3(10f, 5f, 10f);
     private Transform lureTarget;
+    private bool lureActive = false;
 
     [Header("Fish Objects settings")]
     public FishObject[] FishObjects = new FishObject[5];
@@ -65,7 +66,22 @@ public class FishSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (lureTarget != null)
+        {
+            if (!lureActive)
+            {
+                Waypoints.Add(lureTarget);
+            }
+            lureActive = true;
+        }
+        else
+        {
+            if (lureActive)
+            {
+                Waypoints.Remove(lureTarget);
+            }
+            lureActive = false;
+        }
     }
 
     void SpawnFish()
