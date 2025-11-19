@@ -30,7 +30,7 @@ public class BaitBehaviour : MonoBehaviour
         if (m_followingRod)
         {
             GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-            transform.position = (m_rod.transform.position) + targetOffset.magnitude * m_rod.transform.up;
+            transform.position = Vector3.Lerp(transform.position, (m_rod.transform.position) + targetOffset.magnitude * m_rod.transform.up, (float) 0.5);
         }
     }
 
