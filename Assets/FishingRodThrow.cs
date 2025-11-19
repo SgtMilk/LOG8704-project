@@ -69,8 +69,7 @@ public class FishingRodThrow : MonoBehaviour
         Debug.Log("Reel demanded");
         // Debug.Log(previousPosition-transform.position);
         m_bait.GetComponent<Rigidbody>().useGravity = false;
-        m_bait.GetComponent<BaitBehaviour>().followingRodToggle = true;
-        m_bait.GetComponent<BaitBehaviour>().m_followingRod = true;
+        m_bait.GetComponent<BaitBehaviour>().DoReel();
     }
     
     

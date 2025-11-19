@@ -2071,7 +2071,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Throw Rod",
+                    "name": "Reel bait",
                     "type": "Button",
                     "id": "8deca7bf-806d-44e9-9357-480a62af8b52",
                     "expectedControlType": "",
@@ -2080,7 +2080,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Reel Bait",
+                    "name": "Throw bait",
                     "type": "Button",
                     "id": "834665e3-419f-42c6-9180-ed2255e7158c",
                     "expectedControlType": "",
@@ -2383,7 +2383,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Throw Rod",
+                    "action": "Reel bait",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -2416,7 +2416,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Reel Bait",
+                    "action": "Throw bait",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
