@@ -7,14 +7,16 @@ TagManager:
   - Anchor
   - Plane
   - Floor
+  - Water
+  - Net
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Floor
   - Water
   - UI
-  - 
+  - Net
   - 
   - 
   - 

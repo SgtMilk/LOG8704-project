@@ -50564,6 +50564,7 @@ struct BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716  : public MonoBeh
 {
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___m_rod;
 	float ___miny;
+	bool ___landed;
 	Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* ___previousPosition;
 	float ___minMagnitude;
 	int32_t ___previousPositionIdx;

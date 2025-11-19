@@ -13,6 +13,7 @@ public class FishingRodThrow : MonoBehaviour
     InputActionReference m_reelAction;
 
     [SerializeField] private GameObject m_bait;
+    private InputAction reelBait = null;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,7 +30,7 @@ public class FishingRodThrow : MonoBehaviour
             throwBait.performed += OnThrowDemanded;
         }
         
-        var reelBait = GetInputAction(m_reelAction);
+        reelBait = GetInputAction(m_reelAction);
         if (reelBait != null)
         {
             reelBait.performed += OnReelDemanded;
@@ -44,8 +45,13 @@ public class FishingRodThrow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
-
+        if (reelBait != null)
+        {
+            if (reelBait.ReadValueAsObject() != null)
+            {
+                m_bait.GetComponent<BaitBehaviour>().DoReel();
+            }
+        }
     }
     
     static InputAction GetInputAction(InputActionReference actionReference)
@@ -57,18 +63,11 @@ public class FishingRodThrow : MonoBehaviour
 
     private void OnThrowDemanded(InputAction.CallbackContext ctx)
     {
-        // Debug.Log(previousPosition-transform.position);
         m_bait.GetComponent<BaitBehaviour>().ExecuteThrow();
-        m_bait.GetComponent<Rigidbody>().useGravity = true;
-        m_bait.GetComponent<BaitBehaviour>().m_followingRod = false;
-        
     }
     
     private void OnReelDemanded(InputAction.CallbackContext ctx)
     {
-        Debug.Log("Reel demanded");
-        // Debug.Log(previousPosition-transform.position);
-        m_bait.GetComponent<Rigidbody>().useGravity = false;
         m_bait.GetComponent<BaitBehaviour>().DoReel();
     }
     
