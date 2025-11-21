@@ -31,7 +31,7 @@
           {
             "name": "NavMeshSettings",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -54,7 +54,7 @@
           {
             "name": "AnimationClip",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -62,7 +62,7 @@
           {
             "name": "Animator",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -70,7 +70,7 @@
           {
             "name": "AnimatorController",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -118,7 +118,7 @@
           {
             "name": "AudioBehaviour",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -132,7 +132,7 @@
           {
             "name": "AudioListener",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -187,7 +187,7 @@
           {
             "name": "Camera",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -201,14 +201,16 @@
           {
             "name": "ComputeShader",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "Cubemap",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/WorldScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -227,7 +229,7 @@
           {
             "name": "EditorExtension",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -241,7 +243,7 @@
           {
             "name": "GameObject",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -266,14 +268,16 @@
           },
           {
             "name": "LODGroup",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/WorldScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "LevelGameManager",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -281,7 +285,7 @@
           {
             "name": "Light",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -307,7 +311,7 @@
           {
             "name": "LightmapSettings",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -315,7 +319,7 @@
           {
             "name": "LineRenderer",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -329,7 +333,7 @@
           {
             "name": "Material",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -337,7 +341,7 @@
           {
             "name": "Mesh",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -345,7 +349,7 @@
           {
             "name": "MeshFilter",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -353,7 +357,7 @@
           {
             "name": "MeshRenderer",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -361,7 +365,7 @@
           {
             "name": "MonoBehaviour",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -375,7 +379,7 @@
           {
             "name": "MonoScript",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -383,7 +387,7 @@
           {
             "name": "NamedObject",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -421,7 +425,7 @@
           {
             "name": "RectTransform",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -435,7 +439,7 @@
           {
             "name": "RenderSettings",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -443,7 +447,7 @@
           {
             "name": "RenderTexture",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -469,7 +473,7 @@
           {
             "name": "Shader",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -483,7 +487,7 @@
           {
             "name": "SkinnedMeshRenderer",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -497,7 +501,7 @@
           {
             "name": "SortingGroup",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -505,7 +509,7 @@
           {
             "name": "Sprite",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -542,10 +546,8 @@
           },
           {
             "name": "Texture2D",
-            "scenes": [
-              "Assets/Scenes/BasicScene.unity"
-            ],
-            "dependencyType": 0,
+            "scenes": [],
+            "dependencyType": 1,
             "icon": null
           },
           {
@@ -721,6 +723,12 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.terrain"
+          },
+          {
+            "name": "Required by TerrainPhysics Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.terrainphysics"
           },
           {
             "name": "Required by TextCoreFontEngine Module",
@@ -1058,7 +1066,7 @@
           {
             "name": "CharacterController",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1090,7 +1098,7 @@
           {
             "name": "MeshCollider",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1110,7 +1118,7 @@
           {
             "name": "Rigidbody",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1118,10 +1126,16 @@
           {
             "name": "SphereCollider",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
+          },
+          {
+            "name": "Required by TerrainPhysics Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.terrainphysics"
           },
           {
             "name": "Required by UIElements Module",
@@ -1336,6 +1350,12 @@
             "icon": "package/com.unity.modules.terrain"
           },
           {
+            "name": "Required by TerrainPhysics Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.terrainphysics"
+          },
+          {
             "name": "Required by TextCoreFontEngine Module",
             "scenes": [],
             "dependencyType": 2,
@@ -1472,13 +1492,44 @@
         "dependencies": [
           {
             "name": "Terrain",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/WorldScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "TerrainData",
+            "scenes": [
+              "Assets/Scenes/WorldScene.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "TerrainLayer",
+            "scenes": [
+              "Assets/Scenes/WorldScene.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "Required by TerrainPhysics Module",
             "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.terrainphysics"
+          }
+        ]
+      },
+      {
+        "name": "TerrainPhysics",
+        "dependencies": [
+          {
+            "name": "TerrainCollider",
+            "scenes": [
+              "Assets/Scenes/WorldScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           }
@@ -1524,7 +1575,7 @@
           {
             "name": "Font",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1567,7 +1618,7 @@
           {
             "name": "Canvas",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1581,7 +1632,7 @@
           {
             "name": "CanvasRenderer",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/WorldScene.unity"
             ],
             "dependencyType": 0,
             "icon": null

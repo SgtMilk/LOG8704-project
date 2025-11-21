@@ -18,7 +18,6 @@ public class BaitBehaviour : MonoBehaviour
     private Vector3 targetOffset;
 
     private bool outofwater = false;
-    private bool hasFish = true; // TODO change for fish catch
 
     public GameObject fishy;
     private GameObject fishyInstance = null;
@@ -49,7 +48,7 @@ public class BaitBehaviour : MonoBehaviour
         if (m_followingRod)
         {
             rb.linearVelocity = Vector3.zero;
-            transform.position = Vector3.Lerp(transform.position, m_rod.transform.position + targetOffset.magnitude * -m_rod.transform.forward, 0.5f);
+            transform.position = Vector3.Lerp(transform.position, m_rod.transform.position + targetOffset.magnitude * 0.5f * -m_rod.transform.forward, 0.5f);
         }
         previousPosition[previousPositionIdx] = transform.position;
         previousPositionIdx = (previousPositionIdx + 1) % frameDelay;
@@ -80,13 +79,13 @@ public class BaitBehaviour : MonoBehaviour
         target.y = transform.position.y;
 
         // TODO Replace with filet catch
-        if ((target-transform.position).sqrMagnitude <= minMagnitude * minMagnitude )
+        if (((target-transform.position).sqrMagnitude <= minMagnitude * minMagnitude || outofwater) && fishyInstance == null)
         {
             followingRodToggle = true;
             m_followingRod = true;
         }
 
-        
+        if (outofwater) return;
         // TODO replace const with var for fish weight
         transform.position = (target - transform.position).normalized * 0.0625f + transform.position;
     }
@@ -103,17 +102,24 @@ public class BaitBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("Water"))
         {
             rb.linearVelocity = Vector3.zero;
-        } else if (other.gameObject.CompareTag("Floor") && !other.gameObject.CompareTag("Water"))
+        }
+        
+        if (other.gameObject.CompareTag("Floor") && !other.gameObject.CompareTag("Water"))
         {
             Debug.Log("On floor not water");
             outofwater = true;
-        } else if (other.gameObject.CompareTag("Net") && fishyInstance != null)
+        }
+        
+        if (other.gameObject.CompareTag("Net"))
         {
             followingRodToggle = true;
             m_followingRod = true;
 
-            Destroy(fishyInstance);
-            fishyInstance = null;
+            if (fishyInstance != null)
+            {
+                Destroy(fishyInstance);
+                fishyInstance = null;
+            }
         }
         
     }
