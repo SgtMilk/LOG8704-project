@@ -18,12 +18,16 @@ public class BaitBehaviour : MonoBehaviour
 
     private bool outofwater = false;
     private bool hasFish = true; // TODO change for fish catch
+
+    Rigidbody rb;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         targetOffset = transform.position - m_rod.transform.position;
         GetComponent<Collider>().enabled = false;
+        rb.useGravity = false;
         miny = GameObject.Find("Plane").transform.position.y;
     }
 
@@ -33,14 +37,14 @@ public class BaitBehaviour : MonoBehaviour
             
         if (transform.position.y < miny)
         {
-            GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
             transform.position -= new Vector3(0, transform.position.y - miny, 0);
             if (!landed) landed = true;
         }
         
         if (m_followingRod)
         {
-            GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
             transform.position = Vector3.Lerp(transform.position, m_rod.transform.position + targetOffset.magnitude * -m_rod.transform.forward, 0.5f);
         }
         previousPosition[previousPositionIdx] = transform.position;
@@ -50,16 +54,16 @@ public class BaitBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
-        GetComponent<Rigidbody>().linearVelocity = GetComponent<Rigidbody>().linearVelocity * 0.99f;
+        rb.linearVelocity = rb.linearVelocity * 0.99f;
     }
 
     public void ExecuteThrow()
     {
-        GetComponent<Rigidbody>().useGravity = true;
+        rb.useGravity = true;
         m_followingRod = false;
         Vector3 direction = transform.position - previousPosition[(previousPositionIdx + 1) % frameDelay];
         if (direction.sqrMagnitude > minMagnitude * minMagnitude) {
-            GetComponent<Rigidbody>().AddForce(direction.normalized * 13.5f, ForceMode.Impulse);
+            rb.AddForce(direction.normalized * 13.5f, ForceMode.Impulse);
             landed = false;
             outofwater = false;
         }
@@ -68,7 +72,7 @@ public class BaitBehaviour : MonoBehaviour
     public void DoReel() {
         if (!landed) return;
 
-        GetComponent<Rigidbody>().useGravity = false;
+        rb.useGravity = false;
         Vector3 target = m_rod.transform.position + targetOffset.magnitude * -m_rod.transform.forward;
         target.y = transform.position.y;
 
@@ -92,7 +96,7 @@ public class BaitBehaviour : MonoBehaviour
         Debug.Log("Bump");
         if (other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("Water"))
         {
-            GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
         } else if (other.gameObject.CompareTag("Floor") && !other.gameObject.CompareTag("Water"))
         {
             Debug.Log("On floor not water");
