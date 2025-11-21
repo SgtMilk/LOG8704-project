@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.41960785, g: 0.47843137, b: 0.627451, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.0045
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -589,15 +589,15 @@ PrefabInstance:
       objectReference: {fileID: 996504867}
     - target: {fileID: 4617853697746332670, guid: 218a80ebaa172435793ee92bfe5504a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 54.776
+      value: 54.84
       objectReference: {fileID: 0}
     - target: {fileID: 4617853697746332670, guid: 218a80ebaa172435793ee92bfe5504a5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.94
+      value: 5.62
       objectReference: {fileID: 0}
     - target: {fileID: 4617853697746332670, guid: 218a80ebaa172435793ee92bfe5504a5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 35.605
+      value: 36.29
       objectReference: {fileID: 0}
     - target: {fileID: 4617853697746332670, guid: 218a80ebaa172435793ee92bfe5504a5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -866,7 +866,7 @@ GameObject:
   - component: {fileID: 1576548497}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Floor
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -890,7 +890,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1576548498

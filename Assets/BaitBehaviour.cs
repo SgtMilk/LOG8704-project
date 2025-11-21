@@ -24,6 +24,7 @@ public class BaitBehaviour : MonoBehaviour
     {
         targetOffset = transform.position - m_rod.transform.position;
         GetComponent<Collider>().enabled = false;
+        miny = GameObject.Find("Plane").transform.position.y;
     }
 
     // Update is called once per frame
