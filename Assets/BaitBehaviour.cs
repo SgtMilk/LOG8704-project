@@ -1,6 +1,7 @@
-using System;
-using Unity.Mathematics;
+// using System;
+// using Unity.Mathematics;
 using UnityEngine;
+using System.Collections;
 
 public class BaitBehaviour : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class BaitBehaviour : MonoBehaviour
 
     private bool outofwater = false;
     private bool hasFish = true; // TODO change for fish catch
+
+    public GameObject fishy;
+    private GameObject fishyInstance = null;
 
     Rigidbody rb;
     
@@ -91,6 +95,11 @@ public class BaitBehaviour : MonoBehaviour
     {
         // TODO how tf do I check body overlap without the plane being a trigger?
         Debug.Log("Bump");
+        if (other.gameObject.CompareTag("Water"))
+        {
+            StartCoroutine(StartTimer());
+        }
+
         if (other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("Water"))
         {
             rb.linearVelocity = Vector3.zero;
@@ -98,11 +107,27 @@ public class BaitBehaviour : MonoBehaviour
         {
             Debug.Log("On floor not water");
             outofwater = true;
-        } else if (other.gameObject.CompareTag("Net") && hasFish)
+        } else if (other.gameObject.CompareTag("Net") && fishyInstance != null)
         {
             followingRodToggle = true;
             m_followingRod = true;
+
+            Destroy(fishyInstance);
+            fishyInstance = null;
         }
         
+    }
+
+    IEnumerator StartTimer()
+    {   
+        Debug.Log("Timer started!");
+        int duration = Random.Range(3, 5); 
+        yield return new WaitForSeconds(duration);
+        Debug.Log("Timer finished!");
+
+        if (!outofwater)
+        {
+            fishyInstance = Instantiate(fishy, transform);
+        }
     }
 }
