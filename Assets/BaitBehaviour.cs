@@ -26,7 +26,7 @@ public class BaitBehaviour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         targetOffset = transform.position - m_rod.transform.position;
-        GetComponent<Collider>().enabled = false;
+        GetComponent<Collider>().enabled = true;
         rb.useGravity = false;
         miny = GameObject.Find("Plane").transform.position.y;
     }
@@ -70,7 +70,6 @@ public class BaitBehaviour : MonoBehaviour
     }
 
     public void DoReel() {
-        if (!landed) return;
 
         rb.useGravity = false;
         Vector3 target = m_rod.transform.position + targetOffset.magnitude * -m_rod.transform.forward;
@@ -85,9 +84,7 @@ public class BaitBehaviour : MonoBehaviour
 
         
         // TODO replace const with var for fish weight
-        if (!outofwater) {
-            transform.position = (target - transform.position).normalized * 0.0625f + transform.position;
-        }
+        transform.position = (target - transform.position).normalized * 0.0625f + transform.position;
     }
 
     private void OnCollisionEnter(Collision other)
