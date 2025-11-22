@@ -1059,7 +1059,9 @@
         "dependencies": [
           {
             "name": "BoxCollider",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/WorldScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
