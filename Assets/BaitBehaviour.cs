@@ -17,6 +17,9 @@ public class BaitBehaviour : MonoBehaviour
     public bool m_followingRod = true;
     private Vector3 targetOffset;
 
+    [SerializeField]
+    private AudioSource source;
+
     private bool startedfish = false;
 
     private bool outofwater = true;
@@ -44,6 +47,7 @@ public class BaitBehaviour : MonoBehaviour
         {
             rb.linearVelocity = Vector3.zero;
             transform.position -= new Vector3(0, transform.position.y - miny, 0);
+            if (outofwater) source.PlayOneShot(source.clip);
             outofwater = false;
             StartCoroutine(StartTimer());
             if (!landed) landed = true;
@@ -108,6 +112,7 @@ public class BaitBehaviour : MonoBehaviour
         {
             outofwater = false;
             startedfish = false;
+            source.PlayOneShot(source.clip);
         }
 
         if (other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("Water"))

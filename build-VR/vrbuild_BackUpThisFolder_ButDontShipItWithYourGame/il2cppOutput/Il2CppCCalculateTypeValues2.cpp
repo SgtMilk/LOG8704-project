@@ -6460,7 +6460,7 @@ struct U3CU3Ec_t9807D522801ED3C705D96B2771AA46078FC42653  : public RuntimeObject
 struct Try_000000E3U24BurstDirectCall_t8B19E16DB8273E11ED294E2956CB64D7FCE9D00A  : public RuntimeObject
 {
 };
-struct U3CStartTimerU3Ed__22_t3641F289752ED567DD585B53004F230FD56FF84C  : public RuntimeObject
+struct U3CStartTimerU3Ed__23_t5732F834480482BAE3B200346FD89D9C349F59E8  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -50572,6 +50572,7 @@ struct BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716  : public MonoBeh
 	bool ___followingRodToggle;
 	bool ___m_followingRod;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___targetOffset;
+	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___source;
 	bool ___startedfish;
 	bool ___outofwater;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___fishy;
@@ -70896,7 +70897,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize16142 = { sizeof(SizeF_tB0FB
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize16143;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize16143 = { sizeof(U3CModuleU3E_tBB65183F1134474D09FF49B95625D25472B9BA8B), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize16144;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize16144 = { sizeof(U3CStartTimerU3Ed__22_t3641F289752ED567DD585B53004F230FD56FF84C), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize16144 = { sizeof(U3CStartTimerU3Ed__23_t5732F834480482BAE3B200346FD89D9C349F59E8), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize16145;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize16145 = { sizeof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716), -1, sizeof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716_StaticFields), 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize16146;

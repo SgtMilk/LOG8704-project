@@ -1861,7 +1861,7 @@ struct Enumerator_t81434F7D5603121F3D7BD6DB916FE1C755307530  : public RuntimeObj
 struct Mobile_t304A73480DF447472BDB16BA19A9E4FE2C8CB2DD  : public RuntimeObject
 {
 };
-struct U3CStartTimerU3Ed__22_t3641F289752ED567DD585B53004F230FD56FF84C  : public RuntimeObject
+struct U3CStartTimerU3Ed__23_t5732F834480482BAE3B200346FD89D9C349F59E8  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -14168,6 +14168,7 @@ struct BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716  : public MonoBeh
 	bool ___followingRodToggle;
 	bool ___m_followingRod;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___targetOffset;
+	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___source;
 	bool ___startedfish;
 	bool ___outofwater;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___fishy;
@@ -19477,10 +19478,10 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable16142[2] =
 	static_cast<int32_t>(offsetof(SizeF_tB0FB4858D62AEB030B1E91200D1019C237518ACD, ___width)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(SizeF_tB0FB4858D62AEB030B1E91200D1019C237518ACD, ___height)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable16144[3] = 
 {
-	static_cast<int32_t>(offsetof(U3CStartTimerU3Ed__22_t3641F289752ED567DD585B53004F230FD56FF84C, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CStartTimerU3Ed__22_t3641F289752ED567DD585B53004F230FD56FF84C, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CStartTimerU3Ed__22_t3641F289752ED567DD585B53004F230FD56FF84C, ___U3CU3E4__this)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable16145[15] = 
+	static_cast<int32_t>(offsetof(U3CStartTimerU3Ed__23_t5732F834480482BAE3B200346FD89D9C349F59E8, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CStartTimerU3Ed__23_t5732F834480482BAE3B200346FD89D9C349F59E8, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CStartTimerU3Ed__23_t5732F834480482BAE3B200346FD89D9C349F59E8, ___U3CU3E4__this)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable16145[16] = 
 {
-	static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___m_rod)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___miny)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___landed)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716_StaticFields, ___frameDelay)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___previousPosition)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___minMagnitude)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___previousPositionIdx)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___followingRodToggle)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___m_followingRod)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___targetOffset)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___startedfish)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___outofwater)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___fishy)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___fishyInstance)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___rb)),};
+	static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___m_rod)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___miny)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___landed)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716_StaticFields, ___frameDelay)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___previousPosition)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___minMagnitude)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___previousPositionIdx)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___followingRodToggle)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___m_followingRod)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___targetOffset)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___source)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___startedfish)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___outofwater)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___fishy)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___fishyInstance)),static_cast<int32_t>(offsetof(BaitBehaviour_tE1EA413AE3EE9DD1C17A7B9CE2AF18DF3C631716, ___rb)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable16146[4] = 
 {
 	static_cast<int32_t>(offsetof(FishingRodThrow_t938E3D4352C6178CE6502A43C60475C56F49FEAC, ___m_throwAction)),static_cast<int32_t>(offsetof(FishingRodThrow_t938E3D4352C6178CE6502A43C60475C56F49FEAC, ___m_reelAction)),static_cast<int32_t>(offsetof(FishingRodThrow_t938E3D4352C6178CE6502A43C60475C56F49FEAC, ___m_bait)),static_cast<int32_t>(offsetof(FishingRodThrow_t938E3D4352C6178CE6502A43C60475C56F49FEAC, ___reelBait)),};
