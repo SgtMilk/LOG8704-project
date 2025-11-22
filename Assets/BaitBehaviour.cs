@@ -17,8 +17,12 @@ public class BaitBehaviour : MonoBehaviour
     public bool m_followingRod = true;
     private Vector3 targetOffset;
 
-    private bool outofwater = false;
-    private bool hasFish = true; // TODO change for fish catch
+    [SerializeField]
+    private AudioSource source;
+
+    private bool startedfish = false;
+
+    private bool outofwater = true;
 
     public GameObject fishy;
     private GameObject fishyInstance = null;
@@ -43,13 +47,16 @@ public class BaitBehaviour : MonoBehaviour
         {
             rb.linearVelocity = Vector3.zero;
             transform.position -= new Vector3(0, transform.position.y - miny, 0);
+            if (outofwater) source.PlayOneShot(source.clip);
+            outofwater = false;
+            StartCoroutine(StartTimer());
             if (!landed) landed = true;
         }
         
         if (m_followingRod)
         {
             rb.linearVelocity = Vector3.zero;
-            transform.position = Vector3.Lerp(transform.position, m_rod.transform.position + targetOffset.magnitude * -m_rod.transform.forward, 0.5f);
+            transform.position = Vector3.Lerp(transform.position, m_rod.transform.position + targetOffset.magnitude * 0.5f * -m_rod.transform.forward, 0.5f);
         }
         previousPosition[previousPositionIdx] = transform.position;
         previousPositionIdx = (previousPositionIdx + 1) % frameDelay;
@@ -63,30 +70,35 @@ public class BaitBehaviour : MonoBehaviour
 
     public void ExecuteThrow()
     {
-        rb.useGravity = true;
-        m_followingRod = false;
         Vector3 direction = transform.position - previousPosition[(previousPositionIdx + 1) % frameDelay];
         if (direction.sqrMagnitude > minMagnitude * minMagnitude) {
+            rb.useGravity = true;
+            m_followingRod = false;
+
             rb.AddForce(direction.normalized * 13.5f, ForceMode.Impulse);
             landed = false;
-            outofwater = false;
+            outofwater = true;
+            startedfish = false;
         }
     }
 
     public void DoReel() {
+        if (!landed) return;
 
         rb.useGravity = false;
         Vector3 target = m_rod.transform.position + targetOffset.magnitude * -m_rod.transform.forward;
         target.y = transform.position.y;
 
         // TODO Replace with filet catch
-        if ((target-transform.position).sqrMagnitude <= minMagnitude * minMagnitude )
+        if (outofwater || ((target-transform.position).sqrMagnitude <= minMagnitude * minMagnitude))
         {
-            followingRodToggle = true;
-            m_followingRod = true;
+            if (fishyInstance == null)
+            {
+                TrackRod();
+            }
         }
 
-        
+        if (outofwater) return;
         // TODO replace const with var for fish weight
         transform.position = (target - transform.position).normalized * 0.0625f + transform.position;
     }
@@ -95,37 +107,68 @@ public class BaitBehaviour : MonoBehaviour
     {
         // TODO how tf do I check body overlap without the plane being a trigger?
         Debug.Log("Bump");
+
         if (other.gameObject.CompareTag("Water"))
         {
-            StartCoroutine(StartTimer());
+            outofwater = false;
+            startedfish = false;
+            source.PlayOneShot(source.clip);
         }
 
         if (other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("Water"))
         {
             rb.linearVelocity = Vector3.zero;
-        } else if (other.gameObject.CompareTag("Floor") && !other.gameObject.CompareTag("Water"))
+            landed = true;
+        }
+        
+        if (other.gameObject.CompareTag("Floor") && !other.gameObject.CompareTag("Water"))
         {
             Debug.Log("On floor not water");
             outofwater = true;
-        } else if (other.gameObject.CompareTag("Net") && fishyInstance != null)
+        }
+        
+        if (other.gameObject.CompareTag("Net"))
         {
-            followingRodToggle = true;
-            m_followingRod = true;
+            TrackRod();
 
+            if (fishyInstance != null)
+            {
+                Destroy(fishyInstance);
+                fishyInstance = null;
+            }
+        }
+
+        
+        if (!outofwater)
+        {
+            StartCoroutine(StartTimer());
+        }
+        
+    }
+
+    void TrackRod()
+    {
+        landed = false;
+        followingRodToggle = true;
+        m_followingRod = true;
+        outofwater = true;
+
+        if (fishyInstance != null)
+        {
             Destroy(fishyInstance);
             fishyInstance = null;
         }
-        
     }
 
     IEnumerator StartTimer()
     {   
         Debug.Log("Timer started!");
+        startedfish = true;
         int duration = Random.Range(3, 5); 
         yield return new WaitForSeconds(duration);
         Debug.Log("Timer finished!");
 
-        if (!outofwater)
+        if (startedfish && !outofwater && fishyInstance == null)
         {
             fishyInstance = Instantiate(fishy, transform);
         }
