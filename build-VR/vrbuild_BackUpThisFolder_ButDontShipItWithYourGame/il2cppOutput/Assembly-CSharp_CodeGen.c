@@ -23,6 +23,9 @@ extern void U3CStartTimerU3Ed__23_MoveNext_m07B1BE10BB98FCF0438BD0E9BA890B22C1AD
 extern void U3CStartTimerU3Ed__23_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mAAB0626E632B810A0538FB4FDC3CFD205D197506 (void);
 extern void U3CStartTimerU3Ed__23_System_Collections_IEnumerator_Reset_m96208F65561BD742B6EE095FA31D7F0B5D940C43 (void);
 extern void U3CStartTimerU3Ed__23_System_Collections_IEnumerator_get_Current_m27749950EF51ADFC618E22FF8DED36634687F9C3 (void);
+extern void BirdSoundPlayer_Start_m2B3501FD2C6B520CA72470F1958825AD578EB7EC (void);
+extern void BirdSoundPlayer_Update_m425600DEF3AA795BA13BA84EAC0E65C8F80F394B (void);
+extern void BirdSoundPlayer__ctor_m968B65346FBF42DF7B07CFDD78B698DAEAB0F8B3 (void);
 extern void FishingRodThrow_Start_m56F8BB709E2866F3319DBCF1D7BA1B09903AC01E (void);
 extern void FishingRodThrow_OnEnable_m373FD639CA98D55C383DC5D9A121B4A5256EBE8C (void);
 extern void FishingRodThrow_Update_m1618A0EAE36F43BEDAED3ED098B7C1955D2BF829 (void);
@@ -210,7 +213,7 @@ extern void XRPokeFollowAffordanceFill_OnTransformTweenableVariableUpdated_m8B3C
 extern void XRPokeFollowAffordanceFill_OnPokeStrengthChanged_m480B681A9BE7B6C71724392FC3368A029EA4CED6 (void);
 extern void XRPokeFollowAffordanceFill_OnPokeStateDataUpdated_m6233708D9CEEA9A7920B821FDBD306F4D7CBFAE6 (void);
 extern void XRPokeFollowAffordanceFill__ctor_mAED1746F6E90C5676967671BFBB11E3B7C6B1E98 (void);
-static Il2CppMethodPointer s_methodPointers[203] = 
+static Il2CppMethodPointer s_methodPointers[206] = 
 {
 	BaitBehaviour_Start_m3A063E02E5961D9FE5E1E757AA91A3B5597F8787,
 	BaitBehaviour_Update_mC26BCC4C679B559CD36F8100E26FB8BC744F0133,
@@ -228,6 +231,9 @@ static Il2CppMethodPointer s_methodPointers[203] =
 	U3CStartTimerU3Ed__23_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mAAB0626E632B810A0538FB4FDC3CFD205D197506,
 	U3CStartTimerU3Ed__23_System_Collections_IEnumerator_Reset_m96208F65561BD742B6EE095FA31D7F0B5D940C43,
 	U3CStartTimerU3Ed__23_System_Collections_IEnumerator_get_Current_m27749950EF51ADFC618E22FF8DED36634687F9C3,
+	BirdSoundPlayer_Start_m2B3501FD2C6B520CA72470F1958825AD578EB7EC,
+	BirdSoundPlayer_Update_m425600DEF3AA795BA13BA84EAC0E65C8F80F394B,
+	BirdSoundPlayer__ctor_m968B65346FBF42DF7B07CFDD78B698DAEAB0F8B3,
 	FishingRodThrow_Start_m56F8BB709E2866F3319DBCF1D7BA1B09903AC01E,
 	FishingRodThrow_OnEnable_m373FD639CA98D55C383DC5D9A121B4A5256EBE8C,
 	FishingRodThrow_Update_m1618A0EAE36F43BEDAED3ED098B7C1955D2BF829,
@@ -422,12 +428,12 @@ extern void TrackedRotation_SetBaseFromVector_m0CAD68507FD5C7AA3C7CAE09720645F03
 extern void TrackedRotation_SetTargetFromVector_m42F1586C38A41E0FB628220D326B1572BB8F80D7_AdjustorThunk (void);
 static Il2CppTokenAdjustorThunkPair s_adjustorThunks[4] = 
 {
-	{ 0x060000AF, TrackedRotation_get_totalOffset_mC129829FFE6CDD96C8885030BDAEF40D569F06C8_AdjustorThunk },
-	{ 0x060000B0, TrackedRotation_Reset_m54545DE2D01827833956AEC4324C136A0CB72425_AdjustorThunk },
-	{ 0x060000B1, TrackedRotation_SetBaseFromVector_m0CAD68507FD5C7AA3C7CAE09720645F033F1D26E_AdjustorThunk },
-	{ 0x060000B2, TrackedRotation_SetTargetFromVector_m42F1586C38A41E0FB628220D326B1572BB8F80D7_AdjustorThunk },
+	{ 0x060000B2, TrackedRotation_get_totalOffset_mC129829FFE6CDD96C8885030BDAEF40D569F06C8_AdjustorThunk },
+	{ 0x060000B3, TrackedRotation_Reset_m54545DE2D01827833956AEC4324C136A0CB72425_AdjustorThunk },
+	{ 0x060000B4, TrackedRotation_SetBaseFromVector_m0CAD68507FD5C7AA3C7CAE09720645F033F1D26E_AdjustorThunk },
+	{ 0x060000B5, TrackedRotation_SetTargetFromVector_m42F1586C38A41E0FB628220D326B1572BB8F80D7_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[203] = 
+static const int32_t s_InvokerIndices[206] = 
 {
 	21227,
 	21227,
@@ -445,6 +451,9 @@ static const int32_t s_InvokerIndices[203] =
 	20999,
 	21227,
 	20999,
+	21227,
+	21227,
+	21227,
 	21227,
 	21227,
 	21227,
@@ -637,7 +646,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	203,
+	206,
 	s_methodPointers,
 	4,
 	s_adjustorThunks,
