@@ -2,6 +2,7 @@
 // using Unity.Mathematics;
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class BaitBehaviour : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class BaitBehaviour : MonoBehaviour
     private GameObject fishyInstance = null;
 
     Rigidbody rb;
+    public TMP_Text scoreText;
+    int scoreCounter = 0;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -136,6 +139,9 @@ public class BaitBehaviour : MonoBehaviour
                 Destroy(fishyInstance);
                 fishyInstance = null;
             }
+
+            scoreCounter += 1;
+            scoreText.text = $"{scoreCounter} Fish";
         }
 
         
