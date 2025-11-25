@@ -133,15 +133,6 @@ public class BaitBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Net"))
         {
             TrackRod();
-
-            if (fishyInstance != null)
-            {
-                Destroy(fishyInstance);
-                fishyInstance = null;
-            }
-
-            scoreCounter += 1;
-            scoreText.text = $"{scoreCounter} Fish";
         }
 
         
@@ -163,7 +154,14 @@ public class BaitBehaviour : MonoBehaviour
         {
             Destroy(fishyInstance);
             fishyInstance = null;
+
+            scoreCounter += 1;
+            scoreText.text = $"{scoreCounter} Fish";
         }
+    }
+    public void EmergencyReel()
+    {
+        TrackRod();
     }
 
     IEnumerator StartTimer()

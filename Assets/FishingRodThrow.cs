@@ -12,6 +12,9 @@ public class FishingRodThrow : MonoBehaviour
     [SerializeField]
     InputActionReference m_reelAction;
 
+    [SerializeField]
+    InputActionReference m_emergReelAction;
+
     [SerializeField] private GameObject m_bait;
     private InputAction reelBait = null;
 
@@ -29,6 +32,13 @@ public class FishingRodThrow : MonoBehaviour
         {
             throwBait.performed += OnThrowDemanded;
         }
+
+        var emergReel = GetInputAction(m_emergReelAction);
+        if (emergReel != null)
+        {
+            emergReel.performed += OnEmergReelDemanded;
+        }
+
         
         reelBait = GetInputAction(m_reelAction);
         if (reelBait != null)
@@ -64,6 +74,11 @@ public class FishingRodThrow : MonoBehaviour
     private void OnThrowDemanded(InputAction.CallbackContext ctx)
     {
         m_bait.GetComponent<BaitBehaviour>().ExecuteThrow();
+    }
+    
+    private void OnEmergReelDemanded(InputAction.CallbackContext ctx)
+    {
+        m_bait.GetComponent<BaitBehaviour>().EmergencyReel();
     }
     
     private void OnReelDemanded(InputAction.CallbackContext ctx)

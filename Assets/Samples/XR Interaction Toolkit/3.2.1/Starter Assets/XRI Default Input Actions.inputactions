@@ -2087,6 +2087,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Emergency Reel",
+                    "type": "Button",
+                    "id": "301f9dff-204a-4d8e-b3f5-701b73e56ad2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -2417,6 +2426,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Throw bait",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c78a2ce-3cb6-4cdf-8489-52ffaab28ac5",
+                    "path": "<XRController>{LeftHand}/{GripButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Emergency Reel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
